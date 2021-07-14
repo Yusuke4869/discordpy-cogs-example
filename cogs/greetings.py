@@ -22,5 +22,15 @@ class Greetings(commands.Cog):
     async def hello(self, ctx):
         await ctx.send("hello")
 
+    """
+    hi コマンド
+    prefix + hi で呼び出される
+
+    on_hi イベントを呼び出す
+    """
+    @commands.command()
+    async def hi(self, ctx):
+        self.bot.dispatch("hi", ctx)
+
 def setup(bot):
     bot.add_cog(Greetings(bot))

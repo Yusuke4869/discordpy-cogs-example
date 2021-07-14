@@ -23,5 +23,12 @@ class Events(commands.Cog):
         else:
             await ctx.channel.send(content)
 
+    """
+    オリジナルイベント
+    """
+    @commands.Cog.listener()
+    async def on_hi(self, ctx):
+        await ctx.channel.send(f"Hi!, {ctx.author.name}")
+
 def setup(bot):
     bot.add_cog(Events(bot))
